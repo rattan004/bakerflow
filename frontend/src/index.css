@@ -1,0 +1,40 @@
+@import "tailwindcss";
+@config "../tailwind.config.js"; /* This tells v4 where your bakery colors are! */
+
+/* Keep your other styles below */
+@layer base {
+body {
+  background-color: #F9F7F2; /* bakery-cream hex */
+  color: #4A3728;           /* bakery-brown hex */
+}
+}
+
+.animate-fadeIn {
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes slideIn {
+  from { transform: translateX(100%); }
+  to { transform: translateX(0); }
+}
+
+@keyframes slideOut {
+  from { transform: translateX(0); }
+  to { transform: translateX(100%); }
+}
+
+/* Success "Pop" for the table rows */
+@keyframes successPop {
+  0% { transform: scale(1); background-color: transparent; }
+  50% { transform: scale(1.02); background-color: #f0fdf4; } /* Subtle green flash */
+  100% { transform: scale(1); background-color: transparent; }
+}
+
+.animate-slideIn { animation: slideIn 0.4s ease-out; }
+.animate-slideOut { animation: slideOut 0.4s ease-in; }
+.animate-success { animation: successPop 0.6s ease-out; }
